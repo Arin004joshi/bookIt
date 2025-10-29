@@ -1,11 +1,8 @@
-import { IExperience, ISlot } from "../src/models/interfaces";
-
 // Helper to create a slot starting from today
-const createSlot = (offsetDays: number, startTime: string, capacity: number, availableSeats: number): ISlot => {
+const createSlot = (offsetDays, startTime, capacity, availableSeats) => {
     const date = new Date();
     date.setDate(date.getDate() + offsetDays); // Set date 'offsetDays' from today
     date.setHours(0, 0, 0, 0); // Normalize time to midnight for date comparison
-
     return {
         date,
         startTime,
@@ -15,9 +12,8 @@ const createSlot = (offsetDays: number, startTime: string, capacity: number, ava
         isSoldOut: availableSeats === 0,
     };
 };
-
 // Define mock data (must match IExperience structure)
-export const experienceData: Partial<IExperience>[] = [
+export const experienceData = [
     {
         title: "Venice Gondola Ride & Aperitivo",
         description: "Experience the magic of Venice's canals with a private gondola ride, followed by a classic Italian Aperitivo.",
@@ -58,3 +54,4 @@ export const experienceData: Partial<IExperience>[] = [
         ],
     },
 ];
+//# sourceMappingURL=experiences.js.map

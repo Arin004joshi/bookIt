@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import Experience from './src/models/Experience.ts';
-import Booking from './src/models/Booking.ts';
-import { experienceData } from './data/experiences.ts';
+import Experience from './models/Experience.js';
+import Booking from './models/Booking.js';
+import { experienceData } from './data/experiences.js';
 
 // Load environment variables
 dotenv.config({ path: './.env' });

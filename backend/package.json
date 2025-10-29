@@ -8,8 +8,9 @@
     "dev": "nodemon --exec ts-node src/server.ts",
     "build": "tsc",
     "serve": "npm run build && npm start",
-    "data:import": "node --loader ts-node/esm seeder.ts",
-    "data:destroy": "ts-node seeder.ts -d"
+    "seed": "node --loader ts-node/esm src/seeder.ts",
+    "data:import": "node --loader ts-node/esm src/seeder.ts",
+    "data:destroy": "node --loader ts-node/esm src/seeder.ts -d"
   },
   "keywords": [],
   "author": "",

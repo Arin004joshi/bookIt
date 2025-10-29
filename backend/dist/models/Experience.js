@@ -6,7 +6,7 @@ const SlotSchema = new Schema({
     capacity: { type: Number, required: true, default: 10 },
     availableSeats: { type: Number, required: true, default: 10 },
     isSoldOut: { type: Boolean, required: true, default: false },
-}, { _id: false }); // Slots are embedded, so _id isn't strictly necessary
+}, { _id: true }); // Slots are embedded, so _id isn't strictly necessary
 const ExperienceSchema = new Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },

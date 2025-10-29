@@ -76,7 +76,7 @@ export const createBooking = async (req, res) => {
         }
         // Find the slot by its _id within the array
         // FIX 4: Use 'any' or check your ISlot definition. Mongoose sub-documents have an _id, but the TS interface might be missing it. Using 'any' as a quick fix, but you should update the ISlot interface in '../models/Experience.js' to extend Mongoose's Document type or explicitly add: '_id: Types.ObjectId | string;'
-        const slotIndex = experience.slots.findIndex((s) => s?._id?.toString() === slotId);
+        const slotIndex = experience.slots.findIndex((s) => s._id.toString() === slotId);
         if (slotIndex === -1) {
             await session.abortTransaction();
             return res.status(404).json({ message: 'Slot not found or invalid.' });
