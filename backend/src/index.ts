@@ -2,27 +2,25 @@ import express from 'express';
 import type { Request, Response, NextFunction } from "express"
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
-import apiRoutes from './routes/api.js'; // Import our routes
+import apiRoutes from './routes/api.js';
 import cors from "cors";
 
-// Load environment variables
+// Load environment variables (keep this)
 dotenv.config();
 
-// Connect to Database
+// Connect to Database (keep this, it runs immediately)
 connectDB();
 
 const app = express();
 
 // Middleware
-app.use(express.json()); // Body parser for JSON requests
+app.use(express.json());
 
-// Add CORS if necessary, but we'll skip it for initial setup
 const allowedOrigins = ['http://localhost:5173'];
-
 app.use(cors({
     origin: allowedOrigins,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-    credentials: true, // if you’re using cookies or auth headers
+    credentials: true,
 }));
 
 // Basic health check
@@ -31,9 +29,9 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 // Main API routes
-app.use('/api/v1', apiRoutes); // All endpoints will be prefixed with /api/v1
+app.use('/api/v1', apiRoutes);
 
-// Error handling middleware (Good practice)
+// Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     console.error(err.stack);
     res.status(500).json({
@@ -42,8 +40,5 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     });
 });
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-});
+// 🌟 VERCEL FIX: EXPORT THE APP INSTANCE 🌟
+export default app;
