@@ -3,12 +3,7 @@
     "builds": [
         {
             "src": "backend/src/index.ts",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "backend/dist/**"
-                ]
-            }
+            "use": "@vercel/node"
         }
     ],
     "routes": [
@@ -21,6 +16,5 @@
             "dest": "frontend/dist/index.html"
         }
     ],
-    "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend && npm run build --prefix backend",
-    "ignoreBuildCommand": "false"
+    "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend && npm run build --prefix backend"
 }
