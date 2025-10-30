@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import apiRoutes from './routes/api.js';
 import cors from "cors";
+import path from 'path';
 
 dotenv.config();
 
@@ -19,6 +20,18 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     credentials: true,
 }));
+
+if (process.env.NODE_ENV === 'production') {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, '/frontend/dist')));
+}
+
+if (process.env.NODE_ENV === 'production') {
+  const __dirname = path.resolve();
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'))
+  );
+}
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Booklt Backend API is running...');
