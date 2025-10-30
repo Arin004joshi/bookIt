@@ -8,6 +8,10 @@
     ],
     "routes": [
         {
+            "src": "/(assets/.*)",
+            "dest": "frontend/dist/$1"
+        },
+        {
             "src": "/api/v1/(.*)",
             "dest": "backend/dist/index.js"
         },
@@ -16,5 +20,8 @@
             "dest": "frontend/dist/index.html"
         }
     ],
-    "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend && npm run build --prefix backend"
+    "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend && npm run build --prefix backend",
+    "git": {
+        "ignoreBuildCommand": "false"
+    }
 }
