@@ -20,8 +20,5 @@
             "dest": "frontend/dist/index.html"
         }
     ],
-    "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend && npm run build --prefix backend",
-    "git": {
-        "ignoreBuildCommand": "false"
-    }
+    "buildCommand": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend && npm run build --prefix backend"
 }
