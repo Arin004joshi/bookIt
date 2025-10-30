@@ -161,7 +161,7 @@ const CheckoutWithDetailsPage: React.FC = () => {
         return null;
     }
 
-    const { experienceId, selectedDate, selectedTime, totalPrice } = bookingState;
+    const { experienceId, totalPrice } = bookingState;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setCustomerDetails({
