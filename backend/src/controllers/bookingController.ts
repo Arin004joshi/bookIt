@@ -155,6 +155,8 @@ export const createBooking = async (req: Request, res: Response) => {
                 date: newBooking.date,
                 startTime: newBooking.startTime,
                 finalPrice: newBooking.finalPrice,
+                userEmail: newBooking.userEmail,
+                status: "Confirmed"
             }
         });
 

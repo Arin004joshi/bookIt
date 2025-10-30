@@ -1,25 +1,45 @@
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header'; // Assuming this component exists in src/components/
+
+// Import your page components
+import MainPage from './pages/MainPage';
+import SearchPage from './pages/SearchPage';
+import SelectDatePage from './pages/SelectDatePage';
+import SelectTimePage from './pages/SelectTimePage';
+import CheckoutPage from './pages/CheckoutPage';
+import CheckoutWithDetailsPage from './pages/CheckoutWithDetailsPage';
+import ConfirmationPage from './pages/ConfirmationPage';
+
+// The Layout component renders the full-width Header, 
+// and wraps the main content in a max-width container with padding.
+const Layout = ({ children }: { children: React.ReactNode }) => (
+  // The min-h-screen and overall background styles
+  <div className="min-h-screen bg-gray-50">
+
+    {/* 1. Header: Rendered outside the max-width container to span full width */}
+    <Header />
+
+    {/* 2. Main Content Wrapper: Contains the content of the current page, centered with padding */}
+    <main className="max-w-6xl mx-auto p-4 space-y-8">
+      {children}
+    </main>
+  </div>
+);
+
 export default function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
-      <div className="relative p-10 rounded-3xl shadow-2xl bg-white/10 backdrop-blur-md border border-white/20 text-center overflow-hidden">
+    <Layout>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/date" element={<SelectDatePage />} />
+        <Route path="/time" element={<SelectTimePage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/checkout/details" element={<CheckoutWithDetailsPage />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
 
-        {/* Floating Gradient Orbs */}
-        <div className="absolute -top-10 -left-10 w-40 h-40 bg-pink-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-
-        {/* Content */}
-        <h1 className="text-6xl font-extrabold mb-6 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent animate-text">
-          Hello, World!
-        </h1>
-        <p className="text-gray-300 text-lg max-w-md mx-auto leading-relaxed">
-          Welcome to your colorful React + Tailwind universe 🌈
-          Build, dream, and code in vibrant harmony.
-        </p>
-
-        <button className="mt-8 px-8 py-3 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full text-white font-semibold shadow-lg hover:shadow-pink-500/50 transition duration-300 transform hover:scale-105">
-          Get Started 🚀
-        </button>
-      </div>
-    </div>
+        <Route path="*" element={<h2 className="text-xl text-red-500 text-center">404 - Page Not Found</h2>} />
+      </Routes>
+    </Layout>
   );
 }
