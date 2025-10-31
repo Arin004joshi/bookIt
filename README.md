@@ -17,27 +17,28 @@
 ### 1. Main Page / Search Results
 Users can see all available experiences.
 
-![Main Page](WhatsApp%20Image%202025-10-31%20at%2022.41.37_4dffe83f.jpg)
+![Main Page](https://i.postimg.cc/wBkf3cBL/Screenshot-2025-10-31-224129.png)
 
 ### 2. Select Date
 After choosing an experience, users can select a date.
 
-![Select Date Page](WhatsApp%20Image%202025-10-31%20at%2022.41.48_16060c5f.jpg)
+![Select Date Page](https://i.postimg.cc/qRMmKhtw/Screenshot-2025-10-31-224146.png)
 
 ### 3. Select Time
 After selecting a date, users can pick an available time slot.
 
-![Select Time Page](WhatsApp%20Image%202025-10-31%20at%2022.43.26_a74aac0f.jpg)
+![Select Time Page](https://i.postimg.cc/85PyvJFX/Screenshot-2025-10-31-224313.png)
 
-### 4. Checkout
+### 4. Checkout and checkout/details 
 Users fill in their details to finalize the booking.
 
-![Checkout Page](WhatsApp%20Image%202025-10-31%20at%2022.43.51_16f2b353.jpg)
+![Checkout Page](https://i.postimg.cc/Qtx679BQ/Screenshot-2025-10-31-224347.png)
+![checkout/details Page](https://i.postimg.cc/0Q2tSM6Z/Screenshot-2025-10-31-224415.png)
 
 ### 5. Confirmation
 A summary page confirming the successful booking.
 
-![Confirmation Page](WhatsApp%20Image%202025-10-31%20at%2022.44.21_e4526b72.jpg)
+![Confirmation Page](https://i.postimg.cc/3JdxBt5K/Screenshot-2025-10-31-224600.png)
 
 ## 💻 Tech Stack
 
