@@ -18,7 +18,7 @@ export interface IExperience {
  */
 export const fetchExperiences = async (): Promise<IExperience[]> => {
     try {
-        const response = await apiClient.get('/experiences');
+        const response = await apiClient.get('/api/v1/experiences');
         // Assuming your backend responds with a JSON array directly
         return response.data;
     } catch (error) {
@@ -33,7 +33,7 @@ export const fetchExperiences = async (): Promise<IExperience[]> => {
  */
 export const fetchExperienceById = async (id: string): Promise<IExperience> => {
     try {
-        const response = await apiClient.get(`/experiences/${id}`);
+        const response = await apiClient.get(`/api/v1/experiences/${id}`);
         return response.data;
     } catch (error) {
         console.error(`Error fetching experience ${id}:`, error);

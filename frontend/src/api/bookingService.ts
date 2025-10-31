@@ -30,7 +30,7 @@ export interface IBookingResponse {
 export const createBooking = async (bookingData: IBookingPayload): Promise<IBookingResponse> => {
     try {
         // Correct endpoint: /api/v1/bookings (assuming apiClient baseURL is /api)
-        const response = await apiClient.post('/bookings', bookingData);
+        const response = await apiClient.post('/api/v1/bookings', bookingData);
         return response.data;
     } catch (error) {
         console.error('Error creating booking:', error);
